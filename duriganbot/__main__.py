@@ -9,6 +9,7 @@ from telegram.error import InvalidToken
 from telegram.ext import Updater
 
 # Project
+import rng
 import base
 
 # Configure logging
@@ -49,6 +50,7 @@ except InvalidToken:
 
 log.info('Registering command handlers...')
 base.add_handlers(updater.dispatcher)
+rng.add_handlers(updater.dispatcher)
 
 # Start polling events
 log.info('Polling...')
