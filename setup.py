@@ -1,20 +1,25 @@
 #!/usr/bin/env python
+
 from setuptools import setup, find_packages
 
-with open('README.rst') as f:
+with open('README.md') as f:
     readme_file = f.read()
 
 with open('LICENSE') as f:
     license_file = f.read()
 
+with open('requirements.txt'):
+    requirements_file = f.read()
+
 setup(
-    name='duraiganbot',
-    version='0.1.0',
+    name='duriganbot',
+    version='0.1.1',
     description='A multi-function Telegram Bot',
     long_description=readme_file,
     author='Emerson Belancieri',
     author_email='emersonbelancieri@gmail.com',
     url='https://github.com/Eihen/DuriganBot',
     license=license_file,
-    packages=find_packages(exclude=('tests', 'docs'))
+    packages=find_packages(exclude=('tests', 'docs')),
+    install_requires=requirements_file
 )
