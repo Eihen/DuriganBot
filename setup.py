@@ -13,7 +13,7 @@ with open('requirements.txt'):
 
 setup(
     name='duriganbot',
-    version='0.1.1',
+    version='0.1.2',
     description='A multi-function Telegram Bot',
     long_description=readme_file,
     author='Emerson Belancieri',
