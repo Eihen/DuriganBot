@@ -102,6 +102,6 @@ ENV/
 
 
 # Custom
-activate
 .idea/
-config.ini
+.direnv/
+.envrc
