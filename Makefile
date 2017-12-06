@@ -1,6 +1,9 @@
 init:
 	pip install -r requirements.txt
 
-test:
+init-tests:
 	pip install -r tests/requirements.txt
-	nosetests tests
+
+test:
+	nosetests tests --with-coverage --cover-package=duriganbot
+
