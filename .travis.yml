@@ -1,0 +1,9 @@
+language: python
+python: 3.6
+
+install:
+  - make init
+  - make init-tests
+  - python setup.py develop
+
+script: make test

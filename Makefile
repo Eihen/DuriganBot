@@ -1,6 +1,8 @@
 init:
 	pip install -r requirements.txt
 
-test:
+init-tests:
 	pip install -r tests/requirements.txt
+
+test:
 	nosetests tests
