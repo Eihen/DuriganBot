@@ -48,6 +48,16 @@ class TestRng(unittest.TestCase):
                     self.assertGreaterEqual(result[j], round(cases[i][0]))
                     self.assertLessEqual(result[j], round(cases[i][1]))
 
+    def test_randf(self):
+        cases = [[-10.5, -10.5, 1], [-10.5, 0, 2], [-10.5, 10.5, 5], [0, 10.5, 10]]
+        for i in range(0, len(cases)):
+            with self.subTest(i=i):
+                result = rng.randf(cases[i])
+                self.assertEquals(len(result), cases[i][2])
+                for j in range(0, cases[i][2]):
+                    self.assertGreaterEqual(result[j], cases[i][0])
+                    self.assertLessEqual(result[j], cases[i][1])
+
 
 def main():
     unittest.main()

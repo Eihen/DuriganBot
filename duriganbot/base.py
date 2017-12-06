@@ -14,7 +14,8 @@ def start_handler(bot, update):
 def help_handler(bot, update):
     update.message.reply_text(
         'Here are the list of available commands:' +
-        '\n/rand {a} {b} {n}: generate {n} random integer numbers between {a} and {b}'
+        '\n/rand {a} {b} {n}: generate {n} random integer numbers between {a} and {b}' +
+        '\n/randf {a} {b} {n}: generate {n} random real numbers between {a} and {b}'
     )
 
 
