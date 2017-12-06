@@ -8,7 +8,7 @@ with open('README.md') as f:
 with open('LICENSE') as f:
     license_file = f.read()
 
-with open('requirements.txt'):
+with open('requirements.txt') as f:
     requirements_file = f.read()
 
 setup(
