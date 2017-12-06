@@ -2,8 +2,11 @@ language: python
 python: 3.6
 
 install:
+  - pip install -U codecov
   - make init
   - make init-tests
   - python setup.py develop
 
 script: make test
+
+after_success: codecov
