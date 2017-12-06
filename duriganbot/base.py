@@ -13,7 +13,8 @@ def start_handler(bot, update):
 # /help
 def help_handler(bot, update):
     update.message.reply_text(
-        'Here are the list of available commands:'
+        'Here are the list of available commands:' +
+        '\n/rand {a} {b} {n}: generate {n} random integer numbers between {a} and {b}'
     )
 
 
