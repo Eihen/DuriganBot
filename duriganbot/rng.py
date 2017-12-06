@@ -61,5 +61,27 @@ def rand_handler(bot, update, args):
         )
 
 
+# /randf
+def randf(args):
+    result = []
+    # Generate N floats on the range [a, b]
+    for i in range(0, args[2]):
+        result.append(random.uniform(args[0], args[1]))
+
+    return result
+
+
+def randf_handler(bot, update, args):
+    try:
+        update.message.reply_text(' '.join(str(r) for r in randf(handle_rand_args(args))))
+    except ValueError:
+        # if an error occurs reply with a random number in the range [0, 100]
+        update.message.reply_text(
+            'Something went wrong, so I hope this random number helps: ' +
+            str(random.uniform(0, 100))
+        )
+
+
 def add_handlers(dispatcher):
     dispatcher.add_handler(CommandHandler('rand', rand_handler, pass_args=True))
+    dispatcher.add_handler(CommandHandler('randf', randf_handler, pass_args=True))
