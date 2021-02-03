@@ -1,4 +1,5 @@
 from telegram.ext import CommandHandler
+import logging as log
 import random
 
 
@@ -52,13 +53,15 @@ def rand(args):
 
 def rand_handler(bot, update, args):
     try:
-        update.message.reply_text(' '.join(str(r) for r in rand(handle_rand_args(args))))
+        rand_args = handle_rand_args(args);
+        update.message.reply_text(' '.join(str(r) for r in rand(rand_args)))
     except ValueError:
         # if an error occurs reply with a random number in the range [0, 100]
         update.message.reply_text(
             'Something went wrong, so I hope this random number helps: ' +
             str(random.randint(0, 100))
         )
+        log.exception(' '.join(str(r) for r in rand_args));
 
 
 # /randf
@@ -73,13 +76,15 @@ def randf(args):
 
 def randf_handler(bot, update, args):
     try:
-        update.message.reply_text(' '.join(str(r) for r in randf(handle_rand_args(args))))
+        rand_args = handle_rand_args(args);
+        update.message.reply_text(' '.join(str(r) for r in randf(rand_args)))
     except ValueError:
         # if an error occurs reply with a random number in the range [0, 100]
         update.message.reply_text(
             'Something went wrong, so I hope this random number helps: ' +
             str(random.uniform(0, 100))
         )
+        log.exception(' '.join(str(r) for r in rand_args));
 
 
 def add_handlers(dispatcher):
