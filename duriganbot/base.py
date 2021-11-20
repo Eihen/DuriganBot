@@ -14,6 +14,7 @@ def start_handler(bot, update):
 def help_handler(bot, update):
     update.message.reply_text(
         'Here are the list of available commands:' +
+        '\n/nft: real-time NFT data' +
         '\n/rand {a} {b} {n}: generate {n} random integer numbers between {a} and {b}' +
         '\n/randf {a} {b} {n}: generate {n} random real numbers between {a} and {b}'
     )
@@ -26,3 +27,4 @@ def nft_handler(bot, update):
 def add_handlers(dispatcher):
     dispatcher.add_handler(CommandHandler('start', start_handler))
     dispatcher.add_handler(CommandHandler('help', help_handler))
+    dispatcher.add_handler(CommandHandler('nft', nft_handler))
