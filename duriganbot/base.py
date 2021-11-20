@@ -18,6 +18,10 @@ def help_handler(bot, update):
         '\n/randf {a} {b} {n}: generate {n} random real numbers between {a} and {b}'
     )
 
+# /nft
+def nft_handler(bot, update):
+    update.message.reply_text('Not here, bye!')
+    bot.kick_chat_member(update.message.chat.id, update.message.from_user.id)
 
 def add_handlers(dispatcher):
     dispatcher.add_handler(CommandHandler('start', start_handler))
